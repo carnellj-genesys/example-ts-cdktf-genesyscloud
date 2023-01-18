@@ -1,0 +1,60 @@
+{
+  "//": {
+    "metadata": {
+      "backend": "local",
+      "stackName": "cdktf",
+      "version": "0.15.0"
+    },
+    "outputs": {
+    }
+  },
+  "provider": {
+    "genesyscloud": [
+      {
+      }
+    ]
+  },
+  "resource": {
+    "genesyscloud_routing_queue": {
+      "mySimpleCDKQueue": {
+        "//": {
+          "metadata": {
+            "path": "cdktf/mySimpleCDKQueue",
+            "uniqueId": "mySimpleCDKQueue"
+          }
+        },
+        "description": "Example Queue built by CDK",
+        "name": "MySimpleCDKQueue"
+      }
+    },
+    "genesyscloud_tf_export": {
+      "myexport": {
+        "//": {
+          "metadata": {
+            "path": "cdktf/myexport",
+            "uniqueId": "myexport"
+          }
+        },
+        "directory": "./genesyscloud/export",
+        "export_as_hcl": true,
+        "include_state_file": true,
+        "resource_types": [
+          "genesyscloud_routing_queue"
+        ]
+      }
+    }
+  },
+  "terraform": {
+    "backend": {
+      "local": {
+        "path": "/Users/john.carnell/play/cdktf/terraform.cdktf.tfstate"
+      }
+    },
+    "required_providers": {
+      "genesyscloud": {
+        "source": "MyPureCloud/genesyscloud",
+        "version": "1.10.0"
+      }
+    }
+  }
+}
